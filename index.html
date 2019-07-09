@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_OOD</title>
+</head>
+<body>
+<div class="stop" style="width: 100px; height: 100px; background: red; position: fixed; right: 20px; top: 20px; border-radius: 50%;"></div>
+<script>
+    // 1.
+   /* let arr = [{
+        name: 'apple',
+        quantity: 5,
+        buy: true},
+        {
+            name: 'coconut',
+            quantity: 4,
+            buy: false},
+        {
+            name: 'pork',
+            quantity: 1.5,
+            buy: true},
+        {
+            name: 'banana',
+            quantity: 3,
+            buy: false},
+        {
+            name: 'eggs',
+            quantity: 10,
+            buy: false}];
+    function ShowArray(arr) {
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i].buy == false) {
+                document.write(arr[i].name + ' ' + arr[i].quantity + ' ' + arr[i].buy + '<br>');
+            }
+        }
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i].buy == true) {
+                document.write(arr[i].name + ' ' + arr[i].quantity + ' ' + arr[i].buy + '<br>');
+            }
+        }
+    }
+    function AddToArray(arr, obj) {
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i].name == obj.name) {
+                arr[i].quantity += obj.quantity;
+                arr[i].buy = true;
+                return arr;
+            }
+        }
+        return arr.push(obj);
+    };
+    function Buying(arr, product) {
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i].name == product) {
+                arr[i].buy = true;
+                break;
+            }
+        }
+    }
+    let buing= {
+        name: 'beckon',
+        quantity: 2,
+        buy: true
+    };
+    let buying = {
+        name: 'eggs',
+        quantity: 10,
+        buy: false};
+    ShowArray(arr);
+    AddToArray(arr, buing);
+    AddToArray(arr, buying);
+    ShowArray(arr);
+    Buying(arr, 'banana');
+    ShowArray(arr);*/
+
+   // 2.
+    /*let brr = [{
+      name: 'apple',
+      quantity: 5,
+      cost: 10
+    },
+        {
+        name: 'banana',
+        quantity: 3,
+        cost: 9
+        },
+        {
+        name: 'peach',
+        quantity: 3.5,
+        cost: 14
+        }];
+    function ShowCheck(brr) {
+        for(let  i = 0; i < brr.length; i++) {
+            document.write('Product: ' + brr[i].name + ', Quantity: ' + brr[i].quantity + 'pounds, Cost: ' + brr[i].cost+ ' $; <br>');
+        }
+    }
+    ShowCheck(brr);*/
+  /*  let scores = [
+        60, 58, 54, 56, 55, 59,
+        57, 59, 55, 58, 60, 56,
+        56, 57, 54, 57, 58, 54,
+        55, 56, 56, 60, 55, 59,
+        57, 59, 57, 56, 59, 55
+    ]
+    for (let i = 0; i < scores.length; i++) {
+        /!*if(i % 6 == 0 && i != 0)
+            document.write('<br>');*!/
+        document.write(`Bubble solution #${i} score:${scores[i]}` + '<br>');
+    }*/
+        let first =  ['man', 'head', 'dog'];
+        let  second = ['walk', 'went', 'run'];
+        let  third = ['into', 'to', 'at'];
+        let fourth = ['world', 'sea', 'road'];
+        let colors = ['red', 'blue', 'green', 'yellow', 'pink', 'black', 'maroon', 'coral'];
+        let str = '';
+        let timer = setInterval(()=>{
+            let one = Math.floor(Math.random() * first.length);
+            let two = Math.floor(Math.random() * second.length);
+            let three = Math.floor(Math.random() * third.length);
+            let four = Math.floor(Math.random() * fourth.length);
+            let color = Math.floor(Math.random() * colors.length);
+            str = first[one] + ' ' + second[two] + ' ' + third[three] + ' ' + fourth[four] + ',';
+            str = '<h2 style="color:' + `${colors[color]}`+'">' + `${str}</h2>`;
+            let item = document.createElement('div');
+            item.innerHTML = str;
+            document.body.appendChild(item);
+        },1000);
+
+        document.querySelector('.stop').addEventListener('click', ()=>{
+           clearInterval(timer);
+           console.log('click');
+        });
+</script>
+
+</body>
+</html>
