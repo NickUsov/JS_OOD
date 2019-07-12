@@ -5,132 +5,589 @@
     <title>JS_OOD</title>
 </head>
 <body>
-<div class="stop" style="width: 100px; height: 100px; background: red; position: fixed; right: 20px; top: 20px; border-radius: 50%;"></div>
 <script>
-    // 1.
-   /* let arr = [{
-        name: 'apple',
-        quantity: 5,
-        buy: true},
-        {
-            name: 'coconut',
-            quantity: 4,
-            buy: false},
-        {
-            name: 'pork',
-            quantity: 1.5,
-            buy: true},
-        {
-            name: 'banana',
-            quantity: 3,
-            buy: false},
-        {
-            name: 'eggs',
-            quantity: 10,
-            buy: false}];
-    function ShowArray(arr) {
-        for(let i = 0; i < arr.length; i++) {
-            if(arr[i].buy == false) {
-                document.write(arr[i].name + ' ' + arr[i].quantity + ' ' + arr[i].buy + '<br>');
-            }
-        }
-        for(let i = 0; i < arr.length; i++) {
-            if(arr[i].buy == true) {
-                document.write(arr[i].name + ' ' + arr[i].quantity + ' ' + arr[i].buy + '<br>');
-            }
-        }
-    }
-    function AddToArray(arr, obj) {
-        for(let i = 0; i < arr.length; i++) {
-            if(arr[i].name == obj.name) {
-                arr[i].quantity += obj.quantity;
-                arr[i].buy = true;
-                return arr;
-            }
-        }
-        return arr.push(obj);
-    };
-    function Buying(arr, product) {
-        for(let i = 0; i < arr.length; i++) {
-            if(arr[i].name == product) {
-                arr[i].buy = true;
-                break;
-            }
-        }
-    }
-    let buing= {
-        name: 'beckon',
-        quantity: 2,
-        buy: true
-    };
-    let buying = {
-        name: 'eggs',
-        quantity: 10,
-        buy: false};
-    ShowArray(arr);
-    AddToArray(arr, buing);
-    AddToArray(arr, buying);
-    ShowArray(arr);
-    Buying(arr, 'banana');
-    ShowArray(arr);*/
 
-   // 2.
-    /*let brr = [{
-      name: 'apple',
-      quantity: 5,
-      cost: 10
-    },
-        {
-        name: 'banana',
-        quantity: 3,
-        cost: 9
-        },
-        {
-        name: 'peach',
-        quantity: 3.5,
-        cost: 14
-        }];
-    function ShowCheck(brr) {
-        for(let  i = 0; i < brr.length; i++) {
-            document.write('Product: ' + brr[i].name + ', Quantity: ' + brr[i].quantity + 'pounds, Cost: ' + brr[i].cost+ ' $; <br>');
-        }
-    }
-    ShowCheck(brr);*/
-  /*  let scores = [
-        60, 58, 54, 56, 55, 59,
-        57, 59, 55, 58, 60, 56,
-        56, 57, 54, 57, 58, 54,
-        55, 56, 56, 60, 55, 59,
-        57, 59, 57, 56, 59, 55
-    ]
-    for (let i = 0; i < scores.length; i++) {
-        /!*if(i % 6 == 0 && i != 0)
-            document.write('<br>');*!/
-        document.write(`Bubble solution #${i} score:${scores[i]}` + '<br>');
-    }*/
-        let first =  ['man', 'head', 'dog'];
-        let  second = ['walk', 'went', 'run'];
-        let  third = ['into', 'to', 'at'];
-        let fourth = ['world', 'sea', 'road'];
-        let colors = ['red', 'blue', 'green', 'yellow', 'pink', 'black', 'maroon', 'coral'];
-        let str = '';
-        let timer = setInterval(()=>{
-            let one = Math.floor(Math.random() * first.length);
-            let two = Math.floor(Math.random() * second.length);
-            let three = Math.floor(Math.random() * third.length);
-            let four = Math.floor(Math.random() * fourth.length);
-            let color = Math.floor(Math.random() * colors.length);
-            str = first[one] + ' ' + second[two] + ' ' + third[three] + ' ' + fourth[four] + ',';
-            str = '<h2 style="color:' + `${colors[color]}`+'">' + `${str}</h2>`;
-            let item = document.createElement('div');
-            item.innerHTML = str;
-            document.body.appendChild(item);
-        },1000);
+        // 1. ******************************
 
-        document.querySelector('.stop').addEventListener('click', ()=>{
-           clearInterval(timer);
-           console.log('click');
-        });
+        // function Circle() {
+        //     let radious = 0;
+        //     this.GetRadious = function() {
+        //         return radious;
+        //     }
+        //     this.SetRadious = function(amount) {
+        //         radious = amount;
+        //     }
+        //     this.GetDiameter = function() {
+        //         return radious * 2;
+        //     }
+        //     this.GetSquareOfCircle = function() {
+        //         return Math.PI * radious * radious;
+        //     }
+        //     this.GetLengthCircle = function() {
+        //         return 2 * Math.PI * radious;
+        //     }
+        // }
+        // let circle = new Circle();
+        // circle.SetRadious(5);
+        // document.write(circle.GetRadious() + '<br>');
+        // document.write(circle.GetSquareOfCircle() + '<br>');
+        // document.write(circle.GetLengthCircle() + '<br>');
+
+        // 2. ******************************************************
+        
+        // function Style() {
+        //     this.Name = '';
+        //     this.Value = '';
+        //     this.GetStyle = function() {
+        //         return `${this.Name}: ${this.Value};`;
+        //     }
+        // }
+        // function Attribute() {
+        //     this.Name = '';
+        //     this.Value = '';
+        //     this.GetAttribute = function() {
+        //         return `${this.Name}= "${this.Value}"`;
+        //     }
+        // }
+        // function HtmlElement() {
+        //     this.Name = '';
+        //     this.Text = '';
+        //     let styles = [];
+        //     let attributes = [];
+        //     let elements = [];
+        //     this.SetStyle = function(style) {
+        //         styles.push(style);
+        //     }
+        //     this.SetAttribute = function(attribute) {
+        //         attributes.push(attribute);
+        //     }
+        //     this.SetElementsToStart = function(element) {
+        //         elements.unshift(element);
+        //     }
+        //     this.SetElementsToEnd = function(element) {
+        //         elements.push(element);
+        //     }
+        //     function GetStringStyles() {
+        //         let str = '';
+        //         if(styles.length > 0) {
+        //             for(let i = 0; i < styles.length; i++) {
+        //                 str += styles[i].GetStyle();
+        //             }
+        //         }
+        //         return str;
+        //     }
+        //     function GetStringAttributes() {
+        //         let str = '';
+        //         if(attributes.length > 0) {
+        //             for(let i = 0; i < attributes.length; i++) {
+        //                 str += attributes[i].GetAttribute();
+        //             }
+        //         }
+        //         return str;
+        //     }
+        //      function GetStringInsteadElements() {
+        //         let str = '';
+        //         if(elements.length > 0) {
+        //             for(let i = 0; i < elements.length; i++) {
+        //                 str += elements[i].GetElement();
+        //             } 
+        //         }
+        //         return str;
+        //     }
+        //     this.GetElement = function() {
+        //         if(styles.length > 0) {
+        //             return `<${this.Name} ${GetStringAttributes()} style="${GetStringStyles()}">${this.Text}${GetStringInsteadElements()}</${this.Name}>`;
+        //         }
+        //         else {
+        //             return `<${this.Name} ${GetStringAttributes()}>${this.Text}${GetStringInsteadElements()}</${this.Name}>`;
+        //         }
+        //     }
+        //     this.GetLength = function() {
+        //         return elements.length;
+        //     }
+        // }
+        // let a = new HtmlElement();
+        // a.Name = 'a';
+        // let link = new Attribute();
+        // link.Name = 'href';
+        // link.Value = 'https://www.lipsum.com';
+        // let target = new Attribute();
+        // target.Name = 'target';
+        // target.Value = '_blank';
+        // a.Text = 'More...';
+        // a.SetAttribute(link);
+        // a.SetAttribute(target);
+        // let paragraph = new HtmlElement();
+        // paragraph.Name = 'p';
+        // let text_align = new Style();
+        // text_align.Name = 'text-align';
+        // text_align.Value = 'justify';
+        // paragraph.SetStyle(text_align);
+        // paragraph.Text = '"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"';
+        // paragraph.SetElementsToEnd(a);
+        // let image = new HtmlElement();
+        // image.Name = 'img';
+        // let img_width = new Style();
+        // img_width.Name = 'width';
+        // img_width.Value = '100%';
+        // let source = new Attribute();
+        // source.Name = 'src';
+        // source.Value = 'lipsum.jpg';
+        // let alt = new Attribute();
+        // alt.Name = 'alt';
+        // alt.Value = 'Lorem Ipsum';
+        // image.SetStyle(img_width);
+        // image.SetAttribute(source);
+        // image.SetAttribute(alt);
+        // let h3 = new HtmlElement();
+        // h3.Name = 'h3';
+        // h3.Text = 'What is Lorem Ipsum?';
+        // let div_inner = new HtmlElement();
+        // div_inner.Name = 'div';
+        // let div_width = new Style();
+        // div_width.Name = 'width';
+        // div_width.Value = '300px';
+        // let div_margin = new Style();
+        // div_margin.Name = 'margin';
+        // div_margin.Value = '10px';
+        // div_inner.SetStyle(div_width);
+        // div_inner.SetStyle(div_margin);
+        // div_inner.SetElementsToEnd(h3);
+        // div_inner.SetElementsToEnd(image);
+        // div_inner.SetElementsToEnd(paragraph);
+        // let div_inner_2 = div_inner;
+        // let div_outer = new HtmlElement();
+        // div_outer.Name = 'div';
+        // let Id = new Attribute();
+        // Id.Name = 'id';
+        // Id.Value = 'wrapper';
+        // let display = new Style();
+        // display.Name = 'display';
+        // display.Value = 'flex';
+        // div_outer.SetAttribute(Id);
+        // div_outer.SetStyle(display);
+        // div_outer.SetElementsToEnd(div_inner);
+        // div_outer.SetElementsToEnd(div_inner_2);
+        // document.write(div_outer.GetElement());
+
+
+        // 3. ************************************************************************
+
+        // function PropertyCss() {
+        //     this.Name = '';
+        //     this.Value = '';
+        //     this.getProperty = function() {
+        //         return `${this.Name}:${this.Value};`;
+        //     }
+        // }
+        // function CssClass() {
+        //     this.NameClass = '';
+        //     let Properties = [];
+        //     this.SetProperty = function(property) {
+        //         Properties.push(property);
+        //     }
+        //     function GetString() {
+        //         let str = '';
+        //         if(Properties.length > 0) {
+        //             for(let i = 0; i < Properties.length; i++) {
+        //                 str += Properties[i].getProperty();
+        //             }
+        //             return str;
+        //         }
+        //     }
+        //     this.GetCss = function() {
+        //         return `.${this.NameClass}{${GetString()}}`;
+        //     }
+        // }
+        // function CssBlock() {
+        //     let cssArr = [];
+        //     this.setCssClass = function(CssClass) {
+        //         cssArr.push(CssClass);
+        //     }
+        //     function getStringCss() {
+                
+        //         let str = '';
+        //         if(cssArr.length > 0) {
+        //             for(let i = 0; i < cssArr.length; i++){
+        //                 str += cssArr[i].GetCss();
+        //             }
+        //             return str;
+        //         }
+        //     }
+        //     this.getBlock = function() {
+        //         return `<style>${getStringCss()}</style>`;
+        //     }
+        // }
+
+        // 4. *******************************************************************************************
+
+        //     function HtmlElement() {
+        //     this.Name = '';
+        //     this.Text = '';
+        //     let classes = [];
+        //     let attributes = [];
+        //     let elements = [];
+        //     this.SetClassName = function(className) {
+        //         classes.push(className);
+        //     }
+        //     this.SetAttribute = function(attribute) {
+        //         attributes.push(attribute);
+        //     }
+        //     this.SetElementsToStart = function(element) {
+        //         elements.unshift(element);
+        //     }
+        //     this.SetElementsToEnd = function(element) {
+        //         elements.push(element);
+        //     }
+        //     function GetStringClasses() {
+        //         let str = '';
+        //         if(classes.length > 0) {
+        //             for(let i = 0; i < classes.length; i++) {
+        //                 str += classes[i] + ' ';
+        //             }
+        //         }
+        //         return `class ="${str}"`;
+        //     }
+        //     function GetStringAttributes() {
+        //         let str = '';
+        //         if(attributes.length > 0) {
+        //             for(let i = 0; i < attributes.length; i++) {
+        //                 str += attributes[i].GetAttribute();
+        //             }
+        //         }
+        //         return str;
+        //     }
+        //      function GetStringInsteadElements() {
+        //         let str = '';
+        //         if(elements.length > 0) {
+        //             for(let i = 0; i < elements.length; i++) {
+        //                 str += elements[i].GetElement();
+        //             } 
+        //         }
+        //         return str;
+        //     }
+        //     this.GetElement = function() {
+        //         if(classes.length > 0) {
+        //             return `<${this.Name} ${GetStringAttributes()} ${GetStringClasses()}>${this.Text}${GetStringInsteadElements()}</${this.Name}>`;
+        //         }
+        //         else {
+        //             return `<${this.Name} ${GetStringAttributes()}>${this.Text}${GetStringInsteadElements()}</${this.Name}>`;
+        //         }
+        //     }
+        // }
+
+        // function Attribute() {
+        //     this.Name = '';
+        //     this.Value = '';
+        //     this.GetAttribute = function() {
+        //         return `${this.Name}= "${this.Value}"`;
+        //     }
+        // }
+
+        // let a = new HtmlElement();
+        // a.Name = 'a';
+        // let link = new Attribute();
+        // link.Name = 'href';
+        // link.Value = 'https://www.lipsum.com';
+        // let target = new Attribute();
+        // target.Name = 'target';
+        // target.Value = '_blank';
+        // a.Text = 'More...';
+        // a.SetAttribute(link);
+        // a.SetAttribute(target);
+
+        // let paragraph = new HtmlElement();
+        // paragraph.Name = 'p';
+        // paragraph.SetClassName('text');
+        // paragraph.Text = '"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"';
+        // paragraph.SetElementsToEnd(a);
+
+        // let image = new HtmlElement();
+        // image.Name = 'img';
+        // image.SetClassName('img');
+        // let source = new Attribute();
+        // source.Name = 'src';
+        // source.Value = 'lipsum.jpg';
+        // let alt = new Attribute();
+        // alt.Name = 'alt';
+        // alt.Value = 'Lorem Ipsum';
+        // image.SetAttribute(source);
+        // image.SetAttribute(alt);
+
+        // let h3 = new HtmlElement();
+        // h3.Name = 'h3';
+        // h3.Text = 'What is Lorem Ipsum?';
+
+        // let div_inner = new HtmlElement();
+        // div_inner.Name = 'div';
+        // div_inner.SetClassName('block');
+        // div_inner.SetElementsToEnd(h3);
+        // div_inner.SetElementsToEnd(image);
+        // div_inner.SetElementsToEnd(paragraph);
+
+        // let div_inner_2 = div_inner;
+
+        // let div_outer = new HtmlElement();
+        // div_outer.Name = 'div';
+        // div_outer.SetClassName('wrap');
+        // let Id = new Attribute();
+        // Id.Name = 'id';
+        // Id.Value = 'wrapper';
+        // div_outer.SetAttribute(Id);
+        // div_outer.SetElementsToEnd(div_inner);
+        // div_outer.SetElementsToEnd(div_inner_2);
+
+        // let wrap_css = new CssClass();
+        // let wrap_prop = new PropertyCss();
+        // wrap_prop.Name = 'display';
+        // wrap_prop.Value = 'flex';
+        // wrap_css.NameClass = 'wrap';
+        // wrap_css.SetProperty(wrap_prop);
+
+        // let block_css = new CssClass();
+        // block_css.NameClass = 'block';
+        // let block_width = new PropertyCss();
+        // block_width.Name = 'width';
+        // block_width.Value = '300px';
+        // let block_margin = new PropertyCss();
+        // block_margin.Name = 'margin';
+        // block_margin.Value = '10px';
+        // block_css.SetProperty(block_width);
+        // block_css.SetProperty(block_margin);
+
+        // let img_css = new CssClass();
+        // img_css.NameClass = 'img';
+        // let img_width = new PropertyCss();
+        // img_width.Name = 'width';
+        // img_width.Value = '100%';
+        // img_css.SetProperty(img_width);
+
+        // let text_css = new CssClass();
+        // text_css.nameClass = 'text';
+        // let text_align = new PropertyCss();
+        // text_align.Name = 'text-align';
+        // text_align.Value = 'justify';
+        // text_css.SetProperty(text_align);
+
+        // let stylesBlock = new CssBlock();
+        // stylesBlock.setCssClass(wrap_css);
+        // stylesBlock.setCssClass(block_css);
+        // stylesBlock.setCssClass(img_css);
+        // stylesBlock.setCssClass(text_css);
+        // function HtmlBlock() {
+        //     let css_str = '';
+        //     let html_str = '';
+        //     this.SetCssBlock = function(stylesBlock) {
+        //         css_str = stylesBlock.getBlock();
+        //     }
+        //     this.SetHtmlElements = function(htmlElement) {
+        //         html_str = htmlElement.GetElement();
+        //     }
+        //     this.GetHtmlBlock = function() {
+        //         return css_str + html_str;
+        //     }
+        // }
+        // let htmlBlock = new HtmlBlock();
+        // htmlBlock.SetCssBlock(stylesBlock);
+        // htmlBlock.SetHtmlElements(div_outer);
+        // document.write(htmlBlock.GetHtmlBlock());
+
+
+        // 5. **********************************************************************************
+
+        // function Marker() {
+        //     this._color = 'gray';
+        //     this._ink = 100;
+        //     this.Print = function(text) {
+        //         let i = 0;
+        //         let count_type = 0;
+        //         let max_letters = this._ink / 0.05;
+        //         while(i < text.length) {
+        //             if(text[i] != ' ') {
+        //                 count_type ++;
+        //                 if(count_type >= max_letters) {
+        //                     break;
+        //                 }
+        //             }
+        //             i ++;
+        //         }
+        //         this._ink = 100 - count_type * 0.05;
+        //         return `<p  style="color:${this._color};">${text.substring(0, i)}</p>`;
+        //     }
+        // }
+        // let marker = new Marker();
+        // let txt = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at orci sit amet metus tempus commodo nec eu neque.';
+        // txt  += 'Mauris lacinia ante consectetur varius cursus. Morbi pretium ornare diam quis iaculis. Integer tristique massa id tellus';
+        // txt  += ' sollicitudin, vitae faucibus leo tempus. Maecenas id mauris lectus. Curabitur molestie dignissim leo, nec porta nunc';
+        // txt  += ' pellentesque sed. Suspendisse vitae purus ut nunc tincidunt lobortis et a orci. Donec id cursus quam. Mauris mauris tellus,';
+        // txt  += ' sollicitudin quis diam vel, pharetra rutrum urna. Vestibulum laoreet urna dui, eu rutrum leo tempus nec. Duis a lacinia';
+        // txt  += ' tellus. Phasellus consequat arcu sed mauris finibus, nec dictum lacus condimentum. Phasellus ullamcorper mauris quam, id';
+        // txt  += ' pretium risus ultricies in. Vestibulum consequat non diam quis hendrerit. Suspendisse congue porta justo, vulputate ';
+        // txt  += 'facilisis odio volutpat vel.Sed eget mollis lorem. Praesent a turpis eget sem euismod lobortis eget non metus. Nulla ';
+        // txt  += 'facilisi. Duis ut ipsum suscipit purus finibus posuere nec et augue. Phasellus vestibulum lacus at nisl viverra pellentesque. Class aptent';
+        // txt  += ' taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum purus nunc, mattis at ligula eu, placerat ';
+        // txt  += 'luctus orci. Maecenas posuere tellus in dapibus luctus. Quisque malesuada iaculis mi, ac ultrices felis volutpat pellentesque. Fusce ';
+        // txt  += 'lobortis, nibh tempus venenatis maximus, arcu leo luctus mauris, eu ultrices ligula nulla non neque. Suspendisse placerat leo non libero';
+        // txt  += ' scelerisque laoreet. Proin scelerisque vehicula suscipit. Praesent faucibus varius sem, eget lobortis tortor congue nec. Donec at mollis';
+        // txt  += ' urna.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque tempor augue vitae enim facilisis';
+        // txt  += ' tincidunt. Fusce ultrices molestie nisl non sodales. Vestibulum eleifend bibendum dignissim. Fusce ullamcorper mi in mattis tempus.';
+        // txt  += ' Vivamus pulvinar accumsan massa, ut aliquet eros dictum nec. Fusce malesuada velit in nibh condimentum, non ultricies velit viverra. ';
+        // txt  += 'Pellentesque mollis diam at congue maximus. Proin iaculis nisl sed erat pellentesque, sed placerat odio lacinia.Aliquam finibus lorem at';
+        // txt  += ' nibh fringilla, in pretium est lacinia. Cras tincidunt sed leo non tristique. Fusce ac dolor sem. Integer ut turpis in magna cursus ';
+        // txt  += 'dapibus. Duis ipsum ligula, dictum vel semper in, tempus et dui. Proin blandit ultrices nulla, nec tincidunt sem efficitur non. Vestibulum';
+        // txt  += ' mattis sollicitudin urna, a convallis mi fringilla eget. Nam condimentum consectetur lorem vel facilisis.Morbi convallis porttitor metus';
+        // txt  += ' ut euismod. Sed tempus vehicula dolor id consectetur. Suspendisse ex felis, faucibus at rhoncus sit amet, accumsan ut purus. Praesent in ';
+        // txt  += 'eleifend nunc. Sed nec augue nisl. Nullam est tellus, convallis ac sollicitudin vitae, faucibus sit amet diam. Nulla facilisi. Aliquam ';
+        // txt  += 'tincidunt diam eu mauris lobortis sodales. Vivamus convallis convallis fringilla. Sed euismod elementum finibus. Pellentesque porttitor ';
+        // txt  += 'nunc sit amet turpis venenatis, ac posuere nisi malesuada. Donec eget commodo dolor, id posuere leo. Vivamus in diam tempus, interdum ';
+        // txt  += 'libero molestie, posuere enim. Duis tristique, nulla sed varius interdum, turpis magna semper tellus, in volutpat massa nisl a orci. Morbi';
+        // txt  += ' libero elit, fringilla eget sapien non, ornare placerat augue. Ut convallis facilisis mi, in elementum dui laoreet et.';
+        // document.write(marker.Print(txt));
+        // document.write(marker.Print(txt));
+        // function SuperMarker() {
+        //     Marker.call(this);
+        //     this.Recieve = function() {
+        //         this._ink = 100;
+        //     }
+        // }
+        // let superMarker = new SuperMarker();
+        // document.write(superMarker.Print(txt));
+        // superMarker.Recieve();
+        // document.write(superMarker.Print(txt));
+
+        // 6. ***************************************************************************************
+
+        // class ExtendedDate extends Date {
+        //     constructor(year, month, day) {
+                
+        //         if(arguments.length == 0) {
+        //             super();
+        //             this.year = super.getFullYear();
+        //             this.month = super.getMonth() + 1;
+        //             this.day = super.getDate();
+        //             this.month_index = super.getMonth();
+        //             this.day_index = super.getDate() - 1;
+        //         }
+        //         else {
+        //             super(year, month, day);
+        //             this.year = year;
+        //             this.month = month;
+        //             this.day = day;
+        //             this.month_index = month - 1;
+        //             this.day_index = day - 1;
+        //         }
+        //     }
+        //     getStringDate() {
+        //         let numrics = ['первое','второе','третье','четвертое','пятое','шестое','седьмое','восьмое','девятое','десятое','одиннадцатое','двенадцатое','тринадцатое','четырнадцатое','пятнадцатое','шестнадцатое','семнадцатое','восемнадцатое','девятнадцатое','двадцатое','двадцать первое','двадцать второе','двадцать третье','двадцать четвертое','двадцать пятое','двадцать шестое','двадцать седьмое','двадцать восьмое','двадцать девятое','тридцатое','тридцать первое'];
+        //         let months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+        //         return `${numrics[this.day_index]} ${months[this.month_index]} ${this.year} года`;
+        //     }
+        //     checkDate(year, month, day) {
+        //         if(year < this.year) {
+        //             return false;
+        //         }
+        //         else if(year > this.year) {
+        //             return true;
+        //         }
+        //         else if(year == this.year) {
+        //             if(month < this.month) {
+        //                 return false;
+        //             }
+        //             else if(month > this.month) {
+        //                 return true;
+        //             }
+        //             else if(month == this.month) {
+        //                 if(day < this.day) {
+        //                     return false;
+        //                 }
+        //                 else {
+        //                     return true;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     checkLeap(year){
+        //         let year_;
+        //         if(arguments.length == 0) {
+        //             year_ = this.year;
+        //         }
+        //         else {
+        //             year_ = year;
+        //         }
+        //         if(year_ % 4 != 0) {
+        //             return false;
+        //         }
+        //         else {
+        //             if(year_ % 100 == 0 && year_ % 400 != 0) {
+        //                 return false;
+        //             }
+        //             else {
+        //                 return true;
+        //             }
+        //         }
+        //     }
+        //     getNextDate() {
+        //         let next = this.day + 1;
+        //         return new Date(this.year, this.month_index, next);
+        //     }
+        // }
+        // let myDate = new ExtendedDate(2019, 7, 31);
+        // alert(myDate.getStringDate());
+        // alert(myDate.checkDate(2019, 7, 30));
+        // alert(myDate.checkLeap());
+        // alert(myDate.getNextDate());
+
+        // 7. ***************************************************************************
+
+        // function Employee(lastName, rank) {
+        //     this.lastName = lastName;
+        //     this.rank = rank;
+        // }
+        // let employees = [new Employee('Petrov','manager'), new Employee('Orlova', 'cashier'), new Employee('Sidorov', 'security')];
+        // class EmpTable {
+        //     constructor(arr){
+        //         this.arr = arr;
+        //     }
+        //     getHtml() {
+        //         let size = this.arr.length;
+        //         let str = '';
+        //         for(let i = 0; i < size; i++) {
+        //             str += `<tr><td>${this.arr[i].lastName}</td><td>${this.arr[i].rank}</td></tr>`;
+        //         }
+        //         return `<table><tr><th>LastName</th><th>Rank</th></tr> ${str}</table>`;
+        //     }
+        // }
+        // let empTable = new EmpTable(employees);
+        // document.write(empTable.getHtml());
+
+        // 8. ********************************************************************************
+
+        // function Property(name, value) {
+        //     this.name = name;
+        //     this.value = value;
+        // }
+        // let stylesArr = [new Property('border','1px solid black'), new Property('background-color','yellow')];
+
+        // class StyledEmpTable extends EmpTable{
+        //     constructor(cssArr, htmlArr) {
+        //         super(htmlArr);
+        //         this.cssArr = cssArr;
+        //         this.str = '';
+        //     }
+        //     getStyles() {
+        //         for(let i = 0; i < this.cssArr.length; i++) {
+        //             this.str += `${this.cssArr[i].name}:${this.cssArr[i].value};`;
+        //         }
+        //         this.str = `<style> table { ${this.str} } </style>`;
+        //         return this.str;
+        //     }
+        //     getHtml() {
+        //         return this.getStyles() + super.getHtml();
+        //     }
+        // }
+        // let newTable = new StyledEmpTable(stylesArr, employees);
+        // document.write(newTable.getHtml());
+
 </script>
 
 </body>
